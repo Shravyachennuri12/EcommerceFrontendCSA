@@ -15,7 +15,7 @@ const SignupPage = () => {
       return;
     }
     try {
-      const response = await fetch('http://localhost:8000/api/signup', {
+      const response = await fetch('https://ecommercebackendendcsa.onrender.com/api/signup', { 
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
