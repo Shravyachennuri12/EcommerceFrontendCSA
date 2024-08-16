@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginPage.css'; 
+import { Link } from 'react-router-dom';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -10,7 +11,7 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://ecommercebackendendcsa.onrender.com/api/login', { 
+      const response = await fetch('https://ecommercebackendendcsa.onrender.com/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -56,7 +57,7 @@ const LoginPage = () => {
         </div>
         <button type="submit">Login</button>
         <p>
-          Don't have an account? <a href="/signup">Sign up</a>
+          Don't have an account? <Link to = "/signup"> Sign up</Link>
         </p>
       </form>
     </div>
